@@ -1,21 +1,23 @@
 import React, { useState } from 'react';
 import "./To_Do_Lists.css";
 import "./Added.css";
+import { TiUserDelete } from "react-icons/ti";
 
 function To_Do_List() {
 
     const [delet, setDelet] = useState(false);
     const [name, setName] = useState("")
     const [data, setData] = useState([])
+    const [clas, setClas] = useState("slide-out-blurred-left")
 
     const handleButtonClick = (id) => {
         let filteredData = data?.filter(user => user.id !== id)
         setData(filteredData)
     }
-
     const handleSecondAction = () => {
-        setDelet(true);
+        setClas("slide-out-blurred-left"); // "Delete" tugmasi bosilganda class ni qaytarish
     }
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -31,9 +33,9 @@ function To_Do_List() {
     console.log(data);
 
     let cards = data?.map((user) =>
-        <div key={user.id} className={`added ${delet ? "slide-out-blurred-left" : ""}`}>
+        <div key={user.id} className={`added`}>
             <p>{user.name}</p>
-            <a onClick={() => { handleButtonClick(user.id) }}>Delete</a>
+            <TiUserDelete style={{ fontSize: "30px", cursor: "pointer" }} className='delete' onClick={() => { handleButtonClick(user.id) }} />
         </div>
     );
 
