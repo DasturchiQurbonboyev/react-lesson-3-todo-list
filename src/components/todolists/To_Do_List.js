@@ -33,7 +33,7 @@ function To_Do_List() {
     let cards = data?.map((user) =>
         <div key={user.id} className={`added ${delet ? "slide-out-blurred-left" : ""}`}>
             <p>{user.name}</p>
-            <a onClick={() => { handleSecondAction(handleButtonClick(user.id)) }}>Delete</a>
+            <a onClick={() => { handleButtonClick(user.id) }}>Delete</a>
         </div>
     );
 
