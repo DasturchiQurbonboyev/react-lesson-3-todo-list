@@ -35,7 +35,9 @@ function To_Do_List() {
     let cards = data?.map((user) =>
         <div key={user.id} className={`added`}>
             <p>{user.name}</p>
-            <TiUserDelete style={{ fontSize: "30px", cursor: "pointer" }} className='delete' onClick={() => { handleButtonClick(user.id) }} />
+            <div className='dell'>
+                <TiUserDelete style={{ fontSize: "30px", cursor: "pointer" }} className='delete' onClick={() => { handleButtonClick(user.id) }} />
+            </div>
         </div>
     );
 

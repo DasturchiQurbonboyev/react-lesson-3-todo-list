@@ -9,11 +9,21 @@ body {
     background: linear-gradient(#141e30, #243b55);
 }
 
-
+.added {
+    border-radius: 8px;
+}
 
 .delete {
     padding: 12px;
     border: none;
+}
+
+.dell {
+    width: 50px;
+    height: 50px;
+    background: rgb(92, 74, 74);
+    border-radius: 8px;
+    padding-bottom: 2px;
 }
 
 .login-box {
