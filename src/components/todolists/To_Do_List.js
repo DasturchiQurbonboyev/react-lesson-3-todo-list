@@ -120,6 +120,8 @@ function To_Do_List() {
         localStorage.setItem('todoListData', JSON.stringify(data));
     }, [data]);
 
+    // console.log(data);
+
     const cards = data.map((user) => (
         <div key={user.id} className={`added ${user.id}`} >
             <p>{user.name}</p>
@@ -127,7 +129,10 @@ function To_Do_List() {
                 <TiUserDelete
                     style={{ fontSize: "30px", cursor: "pointer" }}
                     className='delete'
-                    onClick={() => { handleSecondAction(document.querySelector("." + user.id).classList.add("slide-out-blurred-left")); handleDelete(user.id) }}
+                    onClick={() => {
+                        handleSecondAction(document.querySelector("." + user.id).classList.add("slide-out-blurred-left"));
+                        handleDelete(user.id)
+                    }}
                 />
             </div>
         </div>
