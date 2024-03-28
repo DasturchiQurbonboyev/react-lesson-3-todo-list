@@ -21,12 +21,9 @@ function To_Do_List() {
         setName("");
     };
 
-
-
     const handleSecondAction = () => {
         setClas("slide-out-blurred-left");
     }
-
 
     const handleDelete = (id) => {
         const updatedData = data.filter(user => user.id !== id);
@@ -38,8 +35,6 @@ function To_Do_List() {
     useEffect(() => {
         localStorage.setItem('todoListData', JSON.stringify(data));
     }, [data]);
-
-    // console.log(data);
 
     const cards = data.map((user) => (
         <div key={user.id} className={`added ${user.id}`} >
