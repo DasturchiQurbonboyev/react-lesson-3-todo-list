@@ -29,7 +29,7 @@ function To_Do_List() {
         const updatedData = data.filter(user => user.id !== id);
         setTimeout(() => {
             setData(updatedData);
-        }, 500);
+        }, 600);
     };
 
     useEffect(() => {
