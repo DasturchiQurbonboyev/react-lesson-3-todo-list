@@ -12,10 +12,12 @@ function To_Do_List() {
 
     const handleButtonClick = (id) => {
         let filteredData = data?.filter(user => user.id !== id)
-        setData(filteredData)
+        setTimeout(() => {
+            setData(filteredData)
+        }, 700);
     }
     const handleSecondAction = () => {
-        setClas("slide-out-blurred-left"); // "Delete" tugmasi bosilganda class ni qaytarish
+        setClas("slide-out-blurred-left");
     }
 
 
@@ -30,13 +32,11 @@ function To_Do_List() {
         setData(p => [...p, newUser])
         setName("")
     }
-    console.log(data);
-
     let cards = data?.map((user) =>
-        <div key={user.id} className={`added`}>
+        <div key={user.id} className={`added ${user.id}`}>
             <p>{user.name}</p>
             <div className='dell'>
-                <TiUserDelete style={{ fontSize: "30px", cursor: "pointer" }} className='delete' onClick={() => { handleButtonClick(user.id) }} />
+                <TiUserDelete style={{ fontSize: "30px", cursor: "pointer" }} className='delete' onClick={() => { { handleSecondAction(document.querySelector("." + user.id).classList.add("slide-out-blurred-left")); handleButtonClick(user.id); } }} />
             </div>
         </div>
     );
